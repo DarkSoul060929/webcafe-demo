@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCafé Cuba | Páginas Web Premium para Negocios Gastronómicos</title>
+    
+    <!-- Meta tags para SEO y redes sociales -->
+    <meta name="description" content="Páginas web profesionales para cafeterías y restaurantes en Cuba. Diseño premium optimizado para móviles.">
+    <meta name="keywords" content="página web, cafetería, Cuba, restaurante, menú online, WhatsApp">
+    
+    <!-- Fuentes premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Estilos críticos inline -->
+    <style>
+        /* Preloader elegante */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0A0A0A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader-content {
+            text-align: center;
+            color: #D4A574;
+        }
+        
+        .loader-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .coffee-loader {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .coffee-cup {
+            width: 40px;
+            height: 30px;
+            border: 3px solid #D4A574;
+            border-radius: 0 0 20px 20px;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        .coffee-cup:after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 3px solid #D4A574;
+            border-radius: 50%;
+            right: -13px;
+            top: 5px;
+        }
+        
+        .steam {
+            width: 6px;
+            height: 20px;
+            background: rgba(212, 165, 116, 0.3);
+            border-radius: 3px;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: steam 1.5s infinite ease-in-out;
+        }
+        
+        .steam:nth-child(2) {
+            left: 40%;
+            animation-delay: 0.3s;
+        }
+        
+        .steam:nth-child(3) {
+            left: 60%;
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes steam {
+            0%, 100% { height: 10px; opacity: 0.3; }
+            50% { height: 25px; opacity: 0.8; }
+        }
+        
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="coffee-loader">
+                <div class="steam"></div>
+                <div class="steam"></div>
+                <div class="steam"></div>
+                <div class="coffee-cup"></div>
+            </div>
+            <div class="loader-text">WebCafé Cuba</div>
+        </div>
+    </div>
+
+    <!-- Navegación Premium -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-mug-hot"></i>
+                <span>WebCafé <strong>Cuba</strong></span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="#demo" class="nav-link">Demo</a>
+                <a href="#beneficios" class="nav-link">Beneficios</a>
+                <a href="#proceso" class="nav-link">Proceso</a>
+                <a href="#contacto" class="nav-cta">Contactar</a>
+            </div>
+            
+            <button class="menu-toggle" aria-label="Menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section Premium -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">EXCLUSIVO PARA NEGOCIOS GASTRONÓMICOS</div>
+                <h1 class="hero-title">
+                    <span class="title-line">Tu Negocio Gastronómico</span>
+                    <span class="title-line highlight">Con Presencia Digital</span>
+                    <span class="title-line">Premium</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Transformamos tu cafetería o restaurante con una página web elegante, 
+                    funcional y optimizada para el mercado cubano. Diseño que convierte 
+                    visitantes en clientes.
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#demo" class="btn btn-primary">
+                        <i class="fas fa-play-circle"></i> Ver Demo Interactiva
+                    </a>
+                    <a href="#contacto" class="btn btn-outline">
+                        <i class="fas fa-calendar-alt"></i> Consulta Personalizada
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">48h</div>
+                        <div class="stat-label">Implementación</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Mobile First</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">✓</div>
+                        <div class="stat-label">WhatsApp Integrado</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="screen-content">
+                                <div class="cafe-preview">
+                                    <div class="cafe-header-preview">
+                                        <h4>Café Delicias</h4>
+                                        <p>Especialistas en café cubano</p>
+                                    </div>
+                                    <div class="menu-preview">
+                                        <div class="menu-item-preview">
+                                            <span>Café Cubano</span>
+                                            <span>25 CUP</span>
+                                        </div>
+                                        <div class="menu-item-preview">
+                                            <span>Capuchino</span>
+                                            <span>40 CUP</span>
+                                        </div>
+                                    </div>
+                                    <button class="whatsapp-btn-preview">
+                                        <i class="fab fa-whatsapp"></i> Pedir Ahora
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Interactiva Premium -->
+    <section id="demo" class="demo-section">
+        <div class="section-header">
+            <div class="container">
+                <div class="header-badge">DEMO INTERACTIVA</div>
+                <h2>Experimenta Tu Futura Página Web</h2>
+                <p class="section-subtitle">Interactúa con esta demostración real para ver el potencial de tu negocio online</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Controles de personalización -->
+            <div class="demo-controls">
+                <div class="control-group">
+                    <h3>Personaliza el diseño</h3>
+                    <div class="controls">
+                        <div class="control">
+                            <label for="colorTheme">Color Principal</label>
+                            <select id="colorTheme" class="style-select">
+                                <option value="gold">Dorado Elegante</option>
+                                <option value="espresso">Café Espresso</option>
+                                <option value="olive">Verde Oliva</option>
+                                <option value="burgundy">Borgoña</option>
+                            </select>
+                        </div>
+                        <div class="control">
+                            <label for="layoutStyle">Diseño</label>
+                            <select id="layoutStyle" class="style-select">
+                                <option value="modern">Moderno</option>
+                                <option value="classic">Clásico</option>
+                                <option value="minimal">Minimalista</option>
+                            </select>
+                        </div>
+                        <div class="control">
+                            <label for="fontStyle">Tipografía</label>
+                            <select id="fontStyle" class="style-select">
+                                <option value="elegant">Elegante</option>
+                                <option value="clean">Limpia</option>
+                                <option value="bold">Negrita</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Container -->
+            <div class="demo-container" id="liveDemo">
+                <!-- Header de la cafetería -->
+                <header class="demo-cafe-header">
+                    <div class="cafe-identity">
+                        <div class="cafe-logo-demo">
+                            <i class="fas fa-coffee"></i>
+                        </div>
+                        <div class="cafe-info-demo">
+                            <h3 class="cafe-name">Café La Tradición</h3>
+                            <p class="cafe-tagline">Auténtico sabor cubano desde 1995</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cafe-status-demo">
+                        <span class="status-badge open">
+                            <i class="fas fa-circle"></i> Abierto ahora
+                        </span>
+                        <div class="cafe-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Hero Banner -->
+                <div class="demo-hero">
+                    <div class="hero-overlay">
+                        <h4>El arte del buen café</h4>
+                        <p>Descubre nuestra selección premium</p>
+                        <button class="hero-cta">
+                            <i class="fas fa-utensils"></i> Ver Menú Completo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Menú Destacado -->
+                <div class="demo-featured">
+                    <h4><i class="fas fa-crown"></i> Especialidades de la Casa</h4>
+                    
+                    <div class="featured-grid">
+                        <div class="featured-item">
+                            <div class="item-icon">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                            <div class="item-content">
+                                <h5>Café Cubano Tradicional</h5>
+                                <p>Preparado al estilo clásico</p>
+                                <div class="item-price">25 CUP</div>
+                            </div>
+                        </div>
+                        
+                        <div class="featured-item">
+                            <div class="item-icon">
+                                <i class="fas fa-cheese"></i>
+                            </div>
+                            <div class="item-content">
+                                <h5>Sandwich Especial</h5>
+                                <p>Jamón, queso y vegetales frescos</p>
+                                <div class="item-price">90 CUP</div>
+                            </div>
+                        </div>
+                        
+                        <div class="featured-item">
+                            <div class="item-icon">
+                                <i class="fas fa-cookie-bite"></i>
+                            </div>
+                            <div class="item-content">
+                                <h5>Postre del Día</h5>
+                                <p>Dulce casero tradicional</p>
+                                <div class="item-price">45 CUP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menú Completo -->
+                <div class="demo-menu">
+                    <div class="menu-header">
+                        <h4><i class="fas fa-book-open"></i> Nuestra Carta</h4>
+                        <div class="menu-filters">
+                            <button class="filter-btn active" data-filter="all">Todo</button>
+                            <button class="filter-btn" data-filter="cafe">Café</button>
+                            <button class="filter-btn" data-filter="comida">Comida</button>
+                            <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-items">
+                        <!-- Café -->
+                        <div class="menu-category" data-category="cafe">
+                            <div class="menu-item-demo">
+                                <div class="item-main">
+                                    <h5>Café Cubano</h5>
+                                    <p class="item-desc">Espresso endulzado al estilo tradicional</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span class="item-price-demo">25 CUP</span>
+                                    <button class="order-btn" data-item="Café Cubano">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item-demo">
+                                <div class="item-main">
+                                    <h5>Café con Leche</h5>
+                                    <p class="item-desc">Café con leche evaporada cremosa</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span class="item-price-demo">30 CUP</span>
+                                    <button class="order-btn" data-item="Café con Leche">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item-demo">
+                                <div class="item-main">
+                                    <h5>Capuchino</h5>
+                                    <p class="item-desc">Espresso con leche espumosa y cacao</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span class="item-price-demo">40 CUP</span>
+                                    <button class="order-btn" data-item="Capuchino">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Comida -->
+                        <div class="menu-category" data-category="comida">
+                            <div class="menu-item-demo">
+                                <div class="item-main">
+                                    <h5>Sandwich de Jamón</h5>
+                                    <p class="item-desc">Pan, jamón, queso y vegetales frescos</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span class="item-price-demo">80 CUP</span>
+                                    <button class="order-btn" data-item="Sandwich de Jamón">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item-demo">
+                                <div class="item-main">
+                                    <h5>Tostada Mixta</h5>
+                                    <p class="item-desc">Jamón, queso y pollo tostados</p>
+                                </div>
+                                <div class="item-meta">
+                                    <span class="item-price-demo">100 CUP</span>
+                                    <button class="order-btn" data-item="Tostada Mixta">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información y Contacto -->
+                <div class="demo-contact-info">
+                    <div class="contact-grid">
+                        <div class="contact-card-demo">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h5>Horario</h5>
+                                <p>Lunes a Domingo</p>
+                                <p class="contact-detail">7:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card-demo">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h5>Ubicación</h5>
+                                <p>Calle 23 #456</p>
+                                <p class="contact-detail">Vedado, La Habana</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card-demo">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h5>Contacto</h5>
+                                <p>+53 5xxx xxxx</p>
+                                <p class="contact-detail">Disponible por WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="whatsapp-section">
+                        <div class="whatsapp-content">
+                            <div class="whatsapp-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="whatsapp-text">
+                                <h5>¿Listo para ordenar?</h5>
+                                <p>Haz tu pedido directamente por WhatsApp</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/5356168991?text=Hola%20Café%20La%20Tradición,%20quiero%20hacer%20un%20pedido" 
+                           class="whatsapp-action-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Ordenar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Demo Nota -->
+            <div class="demo-footer-note">
+                <div class="note-content">
+                    <i class="fas fa-magic"></i>
+                    <div>
+                        <h4>Esta es solo una demostración</h4>
+                        <p>Tu página web real incluiría <strong>tu información completa</strong>, 
+                           <strong>fotografías profesionales</strong> de tu negocio y productos, 
+                           y estaría <strong>100% personalizada</strong> a tu marca.</p>
+                    </div>
+                </div>
+                <a href="#contacto" class="note-cta">
+                    <i class="fas fa-paint-brush"></i> Solicitar diseño personalizado
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios Premium -->
+    <section id="beneficios" class="benefits-section">
+        <div class="section-header">
+            <div class="container">
+                <div class="header-badge">VALOR PROFESIONAL</div>
+                <h2>Transformación Digital para Tu Negocio</h2>
+                <p class="section-subtitle">Más que una página web, una herramienta de crecimiento empresarial</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card premium">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon-bg"></div>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Incremento de Ventas</h3>
+                    <p class="benefit-description">
+                        Convierte visitantes en clientes con un menú atractivo y accesible 
+                        las 24 horas del día, los 7 días de la semana.
+                    </p>
+                    <ul class="benefit-features">
+                        <li><i class="fas fa-check"></i> Pedidos directos por WhatsApp</li>
+                        <li><i class="fas fa-check"></i> Menú siempre actualizado</li>
+                        <li><i class="fas fa-check"></i> Disponibilidad 24/7</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card premium">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon-bg"></div>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Experiencia de Cliente Premium</h3>
+                    <p class="benefit-description">
+                        Ofrece una experiencia digital memorable que fideliza clientes 
+                        y genera recomendaciones positivas.
+                    </p>
+                    <ul class="benefit-features">
+                        <li><i class="fas fa-check"></i> Diseño intuitivo y elegante</li>
+                        <li><i class="fas fa-check"></i> Navegación optimizada para móviles</li>
+                        <li><i class="fas fa-check"></i> Acceso rápido a información</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card premium">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon-bg"></div>
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Presencia Digital Profesional</h3>
+                    <p class="benefit-description">
+                        Establece tu negocio como una marca confiable y contemporánea 
+                        en el mercado digital cubano.
+                    </p>
+                    <ul class="benefit-features">
+                        <li><i class="fas fa-check"></i> Imagen corporativa digital</li>
+                        <li><i class="fas fa-check"></i> Fácil de compartir en redes</li>
+                        <li><i class="fas fa-check"></i> Credibilidad inmediata</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card premium">
+                    <div class="benefit-icon-wrapper">
+                        <div class="benefit-icon-bg"></div>
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Implementación Rápida</h3>
+                    <p class="benefit-description">
+                        Comienza a operar con tu nueva página web en tiempo récord, 
+                        sin complicaciones técnicas.
+                    </p>
+                    <ul class="benefit-features">
+                        <li><i class="fas fa-check"></i> Listo en 48 horas</li>
+                        <li><i class="fas fa-check"></i> Sin conocimientos técnicos necesarios</li>
+                        <li><i class="fas fa-check"></i> Soporte post-implementación</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso Premium -->
+    <section id="proceso" class="process-section">
+        <div class="section-header">
+            <div class="container">
+                <div class="header-badge">PROCESO ELEGANTE</div>
+                <h2>De la Idea a la Realidad en 4 Pasos</h2>
+                <p class="section-subtitle">Un camino claro hacia tu presencia digital profesional</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="process-timeline premium">
+                <div class="process-step premium">
+                    <div class="step-visual">
+                        <div class="step-number">01</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Consulta y Estrategia</h3>
+                        <p class="step-description">
+                            Analizamos tu negocio, objetivos y preferencias para crear 
+                            una estrategia digital personalizada.
+                        </p>
+                        <div class="step-details">
+                            <div class="detail">
+                                <i class="fas fa-comments"></i>
+                                <span>Reunión inicial</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-bullseye"></i>
+                                <span>Definición de objetivos</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step premium">
+                    <div class="step-visual">
+                        <div class="step-number">02</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Diseño Personalizado</h3>
+                        <p class="step-description">
+                            Creamos un diseño único que refleje la esencia de tu marca 
+                            y optimice la experiencia del usuario.
+                        </p>
+                        <div class="step-details">
+                            <div class="detail">
+                                <i class="fas fa-palette"></i>
+                                <span>Selección de estilo</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Diseño mobile-first</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step premium">
+                    <div class="step-visual">
+                        <div class="step-number">03</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Desarrollo y Pruebas</h3>
+                        <p class="step-description">
+                            Implementamos tu página web con las mejores prácticas 
+                            y realizamos pruebas exhaustivas de calidad.
+                        </p>
+                        <div class="step-details">
+                            <div class="detail">
+                                <i class="fas fa-code"></i>
+                                <span>Desarrollo técnico</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-bug"></i>
+                                <span>Control de calidad</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-step premium">
+                    <div class="step-visual">
+                        <div class="step-number">04</div>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Lanzamiento y Entrenamiento</h3>
+                        <p class="step-description">
+                            Publicamos tu página web y te capacitamos para que 
+                            puedas gestionarla de manera independiente.
+                        </p>
+                        <div class="step-details">
+                            <div class="detail">
+                                <i class="fas fa-rocket"></i>
+                                <span>Lanzamiento oficial</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Capacitación personal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Premium -->
+    <section id="contacto" class="contact-section">
+        <div class="section-header">
+            <div class="container">
+                <div class="header-badge">CONVERSEMOS</div>
+                <h2>Comienza Tu Transformación Digital</h2>
+                <p class="section-subtitle">Programa una consulta gratuita para discutir tu proyecto</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="contact-wrapper premium">
+                <div class="contact-info premium">
+                    <div class="contact-card premium">
+                        <div class="contact-header premium">
+                            <div class="contact-avatar">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h3>WebCafé Cuba</h3>
+                                <p class="contact-subtitle">Especialistas en transformación digital</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-details premium">
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h5>WhatsApp Directo</h5>
+                                    <p>+53 56168991</p>
+                                    <small>Respuesta en menos de 2 horas</small>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h5>Horario de Contacto</h5>
+                                    <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                                    <small>Consultas por WhatsApp 24/7</small>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <div class="detail-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail-content">
+                                    <h5>Servicio Nacional</h5>
+                                    <p>Todas las provincias de Cuba</p>
+                                    <small>Trabajo 100% remoto</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-features premium">
+                            <h4>Lo que ofrecemos:</h4>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Diseño web premium personalizado</li>
+                                <li><i class="fas fa-check"></i> Optimización para móviles cubanos</li>
+                                <li><i class="fas fa-check"></i> Integración con WhatsApp Business</li>
+                                <li><i class="fas fa-check"></i> Hosting y dominio incluido</li>
+                                <li><i class="fas fa-check"></i> Soporte técnico post-venta</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form premium">
+                    <div class="form-header">
+                        <h3>Solicita tu Consulta Gratuita</h3>
+                        <p>Completa este formulario y nos pondremos en contacto contigo en menos de 24 horas</p>
+                    </div>
+                    
+                    <form id="premiumContactForm">
+                        <div class="form-row">
+                            <div class="form-group premium">
+                                <label for="clientName">
+                                    <i class="fas fa-user"></i> Nombre Completo *
+                                </label>
+                                <input type="text" id="clientName" required 
+                                       placeholder="Tu nombre o nombre del negocio">
+                            </div>
+                            
+                            <div class="form-group premium">
+                                <label for="clientPhone">
+                                    <i class="fas fa-phone"></i> Teléfono/WhatsApp *
+                                </label>
+                                <input type="tel" id="clientPhone" required 
+                                       placeholder="+53 5xxx xxxx">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group premium">
+                            <label for="businessType">
+                                <i class="fas fa-store"></i> Tipo de Negocio *
+                            </label>
+                            <select id="businessType" required>
+                                <option value="">Selecciona el tipo de negocio</option>
+                                <option value="cafeteria">Cafetería</option>
+                                <option value="restaurante">Restaurante</option>
+                                <option value="paladar">Paladar</option>
+                                <option value="cafetin">Cafetín</option>
+                                <option value="panaderia">Panadería</option>
+                                <option value="heladeria">Heladería</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group premium">
+                            <label for="projectGoals">
+                                <i class="fas fa-bullseye"></i> Objetivos del Proyecto
+                            </label>
+                            <textarea id="projectGoals" rows="3" 
+                                      placeholder="¿Qué esperas lograr con tu página web? (ventas online, mostrar menú, aumentar visibilidad, etc.)"></textarea>
+                        </div>
+                        
+                        <div class="form-group premium">
+                            <label for="preferredTime">
+                                <i class="fas fa-calendar-check"></i> Mejor horario para contactarte
+                            </label>
+                            <select id="preferredTime">
+                                <option value="">Cualquier horario</option>
+                                <option value="morning">Mañana (9AM - 12PM)</option>
+                                <option value="afternoon">Tarde (2PM - 5PM)</option>
+                                <option value="evening">Noche (6PM - 9PM)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary large">
+                                <i class="fab fa-whatsapp"></i> Enviar Solicitud
+                            </button>
+                            <p class="form-note">
+                                <i class="fas fa-lock"></i> Tus datos están seguros y solo se usarán para contactarte.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="footer premium">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand premium">
+                    <div class="footer-logo">
+                        <i class="fas fa-mug-hot"></i>
+                        <div>
+                            <h4>WebCafé <span>Cuba</span></h4>
+                            <p class="footer-tagline">Presencia digital premium para negocios gastronómicos</p>
+                        </div>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://wa.me/5356168991" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links premium">
+                    <div class="links-column">
+                        <h5>Navegación</h5>
+                        <a href="#demo">Demo Interactiva</a>
+                        <a href="#beneficios">Beneficios</a>
+                        <a href="#proceso">Nuestro Proceso</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h5>Servicios</h5>
+                        <a href="#">Diseño Web Premium</a>
+                        <a href="#">Optimización Móvil</a>
+                        <a href="#">Integración WhatsApp</a>
+                        <a href="#">Consultoría Digital</a>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h5>Recursos</h5>
+                        <a href="#" id="shareDemo">Compartir Demo</a>
+                        <a href="#" id="viewPortfolio">Ver Portfolio</a>
+                        <a href="#" id="downloadBrochure">Brochure Digital</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom premium">
+                <div class="copyright">
+                    <p>&copy; 2026 WebCafé Cuba. Todos los derechos reservados.</p>
+                    <p class="crafted-with">
+                        <i class="fas fa-heart"></i> Hecho con pasión para negocios cubanos
+                    </p>
+                </div>
+                <div class="footer-credits">
+                    <p>Demo interactiva - Propiedad intelectual protegida</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botones Flotantes -->
+    <div class="floating-actions">
+        <a href="https://wa.me/5356168991?text=Hola,%20vi%20tu%20demo%20premium%20y%20quiero%20una%20consulta%20personalizada" 
+           class="floating-whatsapp premium" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-label">Consultar</span>
+        </a>
+        
+        <button class="floating-scroll-top" id="scrollTopBtn" aria-label="Volver arriba">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>¡Solicitud Enviada!</h3>
+            <p>Tu consulta ha sido recibida correctamente. Te contactaremos por WhatsApp en menos de 24 horas.</p>
+            <button class="btn btn-primary" id="modalCloseBtn">Entendido</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
