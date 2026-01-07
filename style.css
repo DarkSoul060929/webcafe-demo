@@ -2021,3 +2021,446 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-gold-dark);
 }
+/* ==========================================================================
+   CORRECCIONES ESPECÍFICAS
+   ========================================================================== */
+
+/* 1. CORREGIR CÍRCULOS DEFORMES */
+.benefit-icon-bg,
+.benefit-icon-wrapper i,
+.cafe-logo-demo,
+.contact-icon,
+.detail-icon,
+.whatsapp-icon,
+.social-link,
+.floating-whatsapp.premium,
+.floating-scroll-top,
+.contact-avatar,
+.item-icon,
+.status-badge i.fa-circle,
+.coffee-cup,
+.coffee-cup:after {
+    aspect-ratio: 1 / 1 !important; /* Fuerza relación 1:1 */
+}
+
+/* Específico para benefit-icon-wrapper */
+.benefit-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-icon-bg {
+    position: absolute;
+    width: 70px !important; /* Fuerza dimensiones fijas */
+    height: 70px !important;
+    border-radius: 50%;
+}
+
+/* Para los elementos que deben ser perfectamente circulares */
+.cafe-logo-demo,
+.contact-icon,
+.detail-icon,
+.whatsapp-icon,
+.social-link,
+.floating-whatsapp.premium,
+.floating-scroll-top,
+.contact-avatar,
+.item-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important; /* Evita que se deformen */
+}
+
+/* 2. CORREGIR NAVEGACIÓN */
+.navbar .container {
+    padding: 0 24px !important; /* Padding consistente */
+    max-width: var(--container-max);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.nav-menu {
+    gap: 32px; /* Reducir gap para mejor ajuste */
+}
+
+.nav-link {
+    padding: 8px 0; /* Añadir padding vertical */
+    white-space: nowrap;
+}
+
+.nav-cta {
+    padding: 10px 20px; /* Ajustar padding */
+    font-size: 0.95rem;
+}
+
+/* Menu toggle mejorado */
+.menu-toggle {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212, 165, 116, 0.1);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+/* 3. MEJORAS RESPONSIVAS */
+
+/* Breakpoint para tablets medianas */
+@media (max-width: 992px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+        padding: 40px 24px;
+    }
+    
+    .hero-visual {
+        order: -1; /* Mover el mockup arriba en móvil */
+        margin-bottom: 40px;
+    }
+    
+    .phone-mockup {
+        width: 280px;
+        height: 560px;
+        margin: 0 auto;
+    }
+    
+    .nav-menu {
+        gap: 24px;
+    }
+    
+    .nav-link {
+        font-size: 0.95rem;
+    }
+}
+
+/* Breakpoint para tablets pequeñas */
+@media (max-width: 768px) {
+    .navbar .container {
+        padding: 0 20px !important;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        border-top: 1px solid rgba(212, 165, 116, 0.1);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        padding: 12px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-cta {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-title .title-line {
+        display: inline;
+        margin-right: 8px;
+    }
+    
+    .hero-title .title-line:last-child {
+        margin-right: 0;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .controls {
+        grid-template-columns: 1fr;
+    }
+    
+    .demo-cafe-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .cafe-status-demo {
+        justify-content: center;
+    }
+}
+
+/* Breakpoint para móviles pequeños */
+@media (max-width: 480px) {
+    .navbar .container {
+        padding: 0 16px !important;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section-header {
+        padding: 60px 0 30px;
+    }
+    
+    .hero .container {
+        padding: 20px 16px;
+    }
+    
+    .hero-badge,
+    .header-badge {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+    }
+    
+    .phone-mockup {
+        width: 240px;
+        height: 480px;
+    }
+    
+    .phone-frame {
+        border-width: 8px;
+        border-radius: 30px;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .stat {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .demo-controls {
+        padding: 20px;
+    }
+    
+    .control-group h3 {
+        font-size: 1.25rem;
+    }
+    
+    .whatsapp-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .whatsapp-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .demo-footer-note {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .note-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .process-step.premium {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .step-visual {
+        display: none;
+    }
+    
+    .contact-wrapper.premium {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-links.premium {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .floating-actions {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .floating-whatsapp.premium {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+/* 4. CORRECCIONES ESPECÍFICAS PARA ELEMENTOS */
+
+/* Asegurar que los badges sean circulares */
+.status-badge {
+    padding: 6px 12px !important;
+    border-radius: 20px !important; /* Usar valor alto en lugar de 50% */
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    line-height: 1 !important;
+}
+
+.status-badge i.fa-circle {
+    font-size: 0.5rem !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Corrección para el loader del café */
+.coffee-loader {
+    width: 60px;
+    height: 80px; /* Más alto para el vapor */
+}
+
+.coffee-cup {
+    width: 40px;
+    height: 30px;
+    border: 3px solid #D4A574;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.coffee-cup:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 3px solid #D4A574;
+    border-left: none;
+    border-radius: 0 50% 50% 0;
+    right: -13px;
+    top: 5px;
+}
+
+/* Corrección para imágenes de fondo */
+.demo-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=400&fit=crop&crop=center');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 250px; /* Altura mínima */
+}
+
+/* 5. MEJORAS DE RENDIMIENTO Y RENDER */
+* {
+    -webkit-tap-highlight-color: transparent; /* Eliminar highlight en móvil */
+}
+
+button, 
+a {
+    touch-action: manipulation; /* Mejorar respuesta táctil */
+}
+
+/* 6. CORRECCIÓN PARA SCROLLBAR EN MOBILE */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+/* 7. PREVENIR DESBORDAMIENTOS */
+.hero-title,
+.section-header h2 {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* 8. MEJORAR VISIBILIDAD DEL MENU TOGGLE */
+.menu-toggle:focus {
+    outline: 2px solid var(--primary-gold);
+    outline-offset: 2px;
+}
+
+/* 9. CORREGIR Z-INDEX EN MÓVIL */
+@media (max-width: 768px) {
+    .navbar {
+        z-index: 1001;
+    }
+    
+    .nav-menu.active {
+        z-index: 1000;
+    }
+    
+    .floating-actions {
+        z-index: 999;
+    }
+}
