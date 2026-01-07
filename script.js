@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🎨 WebCafé Cuba - Demo Premium cargada');
     
-    // Configuración
+   // Configuración
     const CONFIG = {
         whatsapp: '5356168991',
         themes: {
@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
             burgundy: { primary: '#722F37', secondary: '#F5F5F5' }
         }
     };
+     // 0. PREVENIR FLICKERING EN CARGA
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.3s ease';
     
-    // 1. Preloader
+        // 1. Preloader
     const preloader = document.getElementById('preloader');
     if (preloader) {
         window.addEventListener('load', () => {
@@ -22,56 +25,106 @@ document.addEventListener('DOMContentLoaded', function() {
                 preloader.style.pointerEvents = 'none';
                 setTimeout(() => {
                     preloader.style.display = 'none';
+                    document.body.style.opacity = '1';
                     initAnimations();
                 }, 500);
-            }, 1500);
+            }, 1000); // Reducido a 1 segundo
         });
     }
     
-    // 2. Navegación móvil
+ // 2. Navegación móvil MEJORADA
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
+        // Prevenir múltiples event listeners
+        menuToggle.removeEventListener('click', handleMenuToggle);
+        menuToggle.addEventListener('click', handleMenuToggle);
+        
+        function handleMenuToggle() {
             navMenu.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
             menuToggle.innerHTML = navMenu.classList.contains('active') 
                 ? '<i class="fas fa-times"></i>' 
                 : '<i class="fas fa-bars"></i>';
-        });
+        }
         
         // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.nav-link').forEach(link => {
+        document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
+        
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && 
+                !navMenu.contains(e.target) && 
+                !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Cerrar menú con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
     }
-    
-    // 3. Navbar scroll effect
+   // 3. Navbar scroll effect MEJORADO
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         let lastScroll = 0;
+        let ticking = false;
         
-        window.addEventListener('scroll', () => {
+        function updateNavbar() {
             const currentScroll = window.pageYOffset;
             
             if (currentScroll <= 0) {
                 navbar.classList.remove('scrolled');
+                navbar.style.transform = 'translateY(0)';
                 return;
             }
             
-            if (currentScroll > lastScroll && currentScroll > 100) {
-                navbar.style.transform = 'translateY(-100%)';
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+                
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    // Scroll hacia abajo
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scroll hacia arriba
+                    navbar.style.transform = 'translateY(0)';
+                }
             } else {
+                navbar.classList.remove('scrolled');
                 navbar.style.transform = 'translateY(0)';
             }
             
-            navbar.classList.toggle('scrolled', currentScroll > 50);
             lastScroll = currentScroll;
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateNavbar();
+                });
+                ticking = true;
+            }
         });
+        
+        // Inicializar
+        updateNavbar();
     }
+    
     
     // 4. Sistema de personalización de demo
     const colorTheme = document.getElementById('colorTheme');
